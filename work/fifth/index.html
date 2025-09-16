@@ -103,20 +103,14 @@ $(function(){
  $(".select").change(function () {
   let s_val = $("option:selected", this).val();
   $.each($(".list li"), function (index, element) {
-
+　let s_data = $(element).data("category-type");
    if (s_val == "all") {
    $(element).show();
-   return true;
-   }
-
-let s_data = $(element).data("category-type");
-            
-   if (s_data === s_val) {
-   $(element).show();
-   } else {
-   $(element).hide();
-   }
-
+     else if (s_data === s_val) {             
+    $(element).show();
+    } else {
+    $(element).hide();
+    }
    });
  });
 });
